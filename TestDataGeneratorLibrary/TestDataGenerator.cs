@@ -16,8 +16,15 @@ namespace TestDataGeneratorLibrary
         {
             Person person = new Person();
             person.FirstName = GetRandomStringFromArray(Person.firstNameMales);
-            person.LastName = 
+            person.LastName = GetRandomStringFromArray(Person.lastNames);
+            person.Age = RandomInt(0, 100);
             return person;
+        }
+
+        public int RandomInt(int min, int max)
+        {
+            Random roll = new Random();
+            return roll.Next(min, max);
         }
     }
 }
