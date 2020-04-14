@@ -6,6 +6,7 @@ namespace TestDataGeneratorLibrary
 {
     public class TestDataGenerator
     {
+
         public string GetRandomStringFromArray(string[] random)
         {
             Random roll = new Random();
@@ -41,16 +42,30 @@ namespace TestDataGeneratorLibrary
             Random randomSex = new Random();
             int mIndex = randomSex.Next(0,2);
             return (Person.Sex)mIndex;
+        }
 
-            //if (randomSex = 0)
-            //{
-            //    return Person.Sex.Male;
-            //}
+        public List<Person> GetListOfRandomPersons(int pers)
+        {
+            List<Person> people = new List<Person>();
+            for (int i = 0; i <= pers; i++)
+            {
+                people.Add(GenerateRandomPerson());
+            }
+            return people;
+        }
 
-            //else
-            //{
-            //    return Person.Sex.Female;
-            //}
+        public void PrintPerson(Person person)
+        {
+            Console.WriteLine($"{person.FirstName} {person.LastName} - {person.sex} - {person.Age}");
+        }
+
+        public void PrintPeople(List<Person> people)
+        {
+            foreach (var person in people)
+            {
+                PrintPerson(person);
+            }
+            Console.WriteLine($"There were {people.Count} people in list.");
         }
     }
 }
