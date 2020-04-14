@@ -44,10 +44,9 @@ namespace TestDataGeneratorLibrary
             return (Person.Sex)mIndex;
         }
 
-        public List<Person> GetListOfRandomPersons(int pers)
+        public List<Person> GetListOfRandomPersons(List<Person> people, int pers)
         {
-            List<Person> people = new List<Person>();
-            for (int i = 0; i <= pers; i++)
+            for (int i = 0; i < pers; i++)
             {
                 people.Add(GenerateRandomPerson());
             }
