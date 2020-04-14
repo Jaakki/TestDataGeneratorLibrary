@@ -11,7 +11,6 @@ namespace Konsoli
             test.GetRandomStringFromArray(Person.firstNameMales);
             test.GenerateRandomPerson();
             
-            
 
 
         }
